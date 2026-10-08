@@ -53,6 +53,9 @@ BAG_NOTE = ("SET YOUR VALUE in 'Value/cycle' (D) = how much you expect to save o
             "turns orange). This card covers you + up to %s, so a family trip saves more per bag. "
             "Basis = EST, so it lands in the 'incl. estimated' totals; switch Basis to SC to put it in the SC headline.")
 
+BILT_CASH_NOTE = ("REDEEMED WITH BILT CASH - ACCESS row so the dollars are not counted twice (the value already sits in 'Annual Bilt Cash'). Type the Bilt Cash you spent into the month. "
+                  "Caps from Bilt's 2026 redemption list - confirm in the Bilt app Wallet tab. ")
+
 OSCAR_CARDS = [
     dict(tab="CITI-COSTCO", issuer="Citi", product="Costco Anywhere Visa Card by Citi",
          opened="2025-09-19", af=0, waived=False, au_af=0, status="Active",
@@ -116,6 +119,46 @@ OSCAR_CARDS = [
                "OFFICIAL (Amex): '$84 Disney Streaming Credit ... up to a $7 monthly statement credit' at DisneyPlus.com / Hulu.com / Stream.ESPN.com; enrollment required"),
               ("Home Chef credit", "SC", "MONTHLY", 15,
                "PENDING - Amex's current Blue Cash Everyday page shows only the $84 Disney credit and does NOT list Home Chef. Confirm in the Amex app, then keep or delete this row")],
+         cmy=[], multi=[]),
+    dict(tab="BILT-PALLADIUM", issuer="Bilt", product="Bilt Palladium Card",
+         opened="2026-01-01", af=495, waived=False, au_af=0, status="Active",
+         af_note="$495 annual fee, not waived in year 1. Open date is a PLACEHOLDER - change B5 and B10 to the real approval date. Also includes Priority Pass Select (you + 2 guests) and no foreign transaction fees - access perks, not tracked as dollars. Welcome offer: 50k Bilt Points + Gold status + $300 Bilt Cash after $4,000 spend in 90 days.",
+         cal=[("Bilt Travel hotel credit", "SC", "SEMI-ANNUAL", 200,
+               "$200 twice a year = $400/yr; hotel booked via Bilt Travel, 2-night minimum stay. Assumes Jan-Jun / Jul-Dec halves - confirm the exact periods in your Bilt card terms"),
+              ("Annual Bilt Cash", "EST", "CALENDAR-YEAR", 200,
+               "$200 Bilt Cash per year (not a statement credit, so basis = EST). Bilt Cash balance over $100 expires at the end of each calendar year. Enter the amount when you redeem it"),
+              ("Bilt Cash -> Grubhub delivery", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "$10/mo ($120/yr) toward Grubhub grocery or restaurant delivery"),
+              ("Bilt Cash -> Bilt 15-minute home delivery (Gopuff)", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "$5/mo ($60/yr) toward groceries, alcohol and essentials"),
+              ("Bilt Cash -> Bilt Dining restaurants", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Up to $25 on 1 visit per month ($300/yr) via Mobile Dining Checkout at select Bilt Dining restaurants"),
+              ("Bilt Cash -> Exclusive dining experiences", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Up to $50/mo ($600/yr) toward dining experience bookings"),
+              ("Bilt Cash -> Bilt Travel hotel", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Up to $100/mo for Gold/Platinum, $50/mo for Blue/Silver (up to $1,200/yr); Bilt Travel portal, 2-night minimum. Separate from the card's $200 semi-annual hotel credit"),
+              ("Bilt Cash -> Lyft ride", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Up to $10/mo ($120/yr) toward a single Lyft ride"),
+              ("Bilt Cash -> Priority Pass extra guests", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Palladium only: $35 per guest, up to 2 guest fees/mo ($70/mo, $840/yr) - for guests beyond the 2 free ones"),
+              ("Bilt Cash -> Fitness class", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Up to $40 on 1 class per month ($480/yr) - SoulCycle, Barry's and others"),
+              ("Bilt Cash -> Walgreens", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "$10/mo ($120/yr)"),
+              ("Bilt Cash -> Comedy experiences", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Up to $50/mo ($600/yr) toward comedy experience bookings"),
+              ("Bilt Cash -> Bilt Design Collection", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "$10/mo ($120/yr)"),
+              ("Bilt Cash -> Housing payment points unlock", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Every $30 Bilt Cash = 1,000 Bilt Points on rent/mortgage, up to 1X your monthly housing payment"),
+              ("Bilt Cash -> Rent Day transfer bonus upgrade", "ACCESS", "MONTHLY", None,
+               BILT_CASH_NOTE + "Pay Bilt Cash to raise your Rent Day transfer bonus (e.g. Gold 75% -> 100% for $75)"),
+              ("Bilt Cash -> Blacklane", "ACCESS", "CALENDAR-YEAR", None,
+               BILT_CASH_NOTE + "Up to $100/yr for Gold ($50 Blue/Silver, $150 Platinum)"),
+              ("Bilt Cash -> BLADE airport flights", "ACCESS", "CALENDAR-YEAR", None,
+               BILT_CASH_NOTE + "Up to $350 per booking, 2 bookings/yr ($700/yr). Listed as coming soon - check the Bilt app"),
+              ("Bilt Cash -> Point Accelerator", "ACCESS", "CALENDAR-YEAR", None,
+               BILT_CASH_NOTE + "Palladium/Obsidian only: $200 Bilt Cash per activation, up to 5/yr. Palladium = 3X on everyday spend until $5,000 spent or year-end")],
          cmy=[], multi=[]),
 ]
 

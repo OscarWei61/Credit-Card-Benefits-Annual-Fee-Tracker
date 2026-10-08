@@ -1,0 +1,10 @@
+# Personal workbooks and build state - never commit
+*.xlsx
+!example_credit_tracker.xlsx
+.tracker_build_state_*.json
+
+# Local environment
+.venv/
+__pycache__/
+.claude/
+.DS_Store
